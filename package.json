@@ -1,0 +1,19 @@
+{
+  "name": "subtle-sodium",
+  "version": "0.0.0",
+  "description": "A JS crypto library with a libsodium-compatible interface, built on top of SubtleCrypto.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frederickjansen/subtle-sodium.git"
+  },
+  "author": "Frederick Jansen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frederickjansen/subtle-sodium/issues"
+  },
+  "homepage": "https://github.com/frederickjansen/subtle-sodium#readme"
+}
