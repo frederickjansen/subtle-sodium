@@ -4,7 +4,8 @@
   "description": "A JS crypto library with a libsodium-compatible interface, built on top of SubtleCrypto.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
   },
   "homepage": "https://github.com/frederickjansen/subtle-sodium#readme",
   "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "jest": "^23.1.0",
+    "ts-jest": "^22.4.6",
     "typescript": "^2.9.1"
   }
 }

@@ -3,7 +3,8 @@
     "module": "commonjs",
     "target": "es5",
     "sourceMap": true,
-    "rootDir": "src"
+    "rootDir": "src",
+    "outDir": "./lib"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
