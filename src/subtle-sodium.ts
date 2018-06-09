@@ -1,26 +1,22 @@
 export class SubtleSodium {
-    static readonly crypto_secretbox_KEYBYTES = 32;
-    static readonly crypto_secretbox_NONCEBYTES = 12;
+    public static readonly crypto_secretbox_KEYBYTES = 32;
+    public static readonly crypto_secretbox_NONCEBYTES = 12;
 
-    constructor() {
-        crypto = window.crypto;
+    public static randombytes_buf(length: number) {
+        return window.crypto.getRandomValues(new Uint8Array(length));
     }
 
-    static randombytes_buf(length: number) {
-        return crypto.getRandomValues(new Uint8Array(length))
-    }
-
-    static async crypto_secretbox_easy(message: string, nonce: Uint8Array, key) {
+    public static async crypto_secretbox_easy(message: string, nonce: Uint8Array, key) {
         const msUtf8 = new TextEncoder().encode(message);
         const alg = {name: 'AES-GCM', iv: nonce, tagLength: 128};
 
-        return await crypto.subtle.encrypt(alg, key, msUtf8);
+        return await window.crypto.subtle.encrypt(alg, key, msUtf8);
     }
 
-    static async crypto_secretbox_easy_open(ciphertext: string, nonce: Uint8Array, key) {
+    public static async crypto_secretbox_easy_open(ciphertext: string, nonce: Uint8Array, key) {
         const ctUtf8 = new TextEncoder().encode(ciphertext);
         const alg = {name: 'AES-GCM', iv: nonce, tagLength: 128};
 
-        return await crypto.subtle.decrypt(alg, key, ctUtf8);
+        return await window.crypto.subtle.decrypt(alg, key, ctUtf8);
     }
 }
