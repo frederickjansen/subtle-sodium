@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "test": "tslint -c tslint.json 'src/**/*.ts' && jest"
+    "test": "tslint -c tslint.json 'src/**/*.ts' && karma start --single-run --browsers ChromeHeadless karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,15 @@
   },
   "homepage": "https://github.com/frederickjansen/subtle-sodium#readme",
   "devDependencies": {
-    "@types/jest": "^23.0.0",
-    "jest": "^23.1.0",
-    "ts-jest": "^22.4.6",
+    "@types/chai": "^4.1.3",
+    "@types/mocha": "^5.2.1",
+    "chai": "^4.1.2",
+    "karma": "^2.0.2",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-typescript": "^3.0.12",
+    "mocha": "^5.2.0",
     "tslint": "^5.10.0",
     "typescript": "^2.9.1"
   }

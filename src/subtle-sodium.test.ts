@@ -1,5 +1,8 @@
-import { SubtleSodium as subtle } from './subtle-sodium';
+import { expect } from 'chai';
+import { SubtleSodium as subtle } from '../src/subtle-sodium';
 
-test('crypto_secretbox_KEYBYTES is 32', () => {
-    expect(subtle.crypto_secretbox_KEYBYTES).toBe(32);
+describe('HelloComponent', () => {
+    it('crypto_secretbox_KEYBYTES is 32', () => {
+        expect(subtle.crypto_secretbox_KEYBYTES).to.be.equal(32);
+    });
 });
