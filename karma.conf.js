@@ -12,6 +12,9 @@ module.exports = function(config) {
     browsers: ['ChromeHeadless'],
     autoWatch: false,
     // singleRun: false, // Karma captures browsers, runs the tests and exits
-    concurrency: Infinity
+    concurrency: Infinity,
+    karmaTypescriptConfig: {
+      tsconfig: './tsconfig.json'
+    }
   })
 };

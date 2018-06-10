@@ -6,7 +6,8 @@
   "jsRules": {},
   "rules": {
     "quotemark": [true, "single"],
-    "variable-name": [true, "ban-keywords", "check-format", "allow-snake-case"]
+    "variable-name": [true, "ban-keywords", "check-format", "allow-snake-case"],
+    "max-line-length": [false]
   },
   "rulesDirectory": []
 }
