@@ -8,6 +8,21 @@ it('randombytes_buf return Uint8Array of correct length', () => {
     expect(ar).to.be.a('Uint8Array');
 });
 
+it('to_hex should convert Uint8Array to string', () => {
+    const hex = subtle.to_hex(new Uint8Array([0, 255, 20]));
+    expect(hex).to.equal('00ff14');
+});
+
+it('to_hex should pad short strings correctly', () => {
+    const hex = subtle.to_hex(new Uint8Array([0]));
+    expect(hex).to.equal('00');
+});
+
+it('from_hex should return correct data', () => {
+    const hex = subtle.from_hex('00ff14');
+    expect(hex).to.be.deep.equal(new Uint8Array([0, 255, 20]));
+});
+
 describe('Secret-key authenticated encryption', () => {
     it('should generate key', (done) => {
         subtle.crypto_secretbox_keygen().then((key) => {

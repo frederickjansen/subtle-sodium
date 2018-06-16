@@ -5,7 +5,7 @@
     "sourceMap": true,
     "rootDir": "src",
     "outDir": "./lib",
-    "lib": ["es2015", "dom"]
+    "lib": ["es2017", "dom"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

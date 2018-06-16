@@ -6,6 +6,14 @@ export class SubtleSodium {
         return window.crypto.getRandomValues(new Uint8Array(length)) as Uint8Array;
     }
 
+    public static from_hex(hex: string): Uint8Array {
+        return new Uint8Array(hex.match(/.{2}/g).map((b) => parseInt(b, 16)));
+    }
+
+    public static to_hex(uint8: Uint8Array): string {
+        return Array.from(uint8).map((b) => b.toString(16).padStart(2, '0')).join('');
+    }
+
     public static async crypto_secretbox_keygen(): Promise<Uint8Array> {
         const alg = {name: 'AES-GCM', length: SubtleSodium.crypto_secretbox_KEYBYTES * 8};
         // At least one keyUsage has to be provided, even though it will not be used
